@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using KissLog;
 using KissLog.AspNetCore;
 using KissLog.CloudListeners.Auth;
@@ -33,6 +34,8 @@ namespace SistemaDeControleDeTCCs
         public void ConfigureServices(IServiceCollection services)
 
         {
+
+            services.AddMvc().AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Startup>());
 
             services.AddControllersWithViews();
             services.AddDbContext<SistemaDeControleDeTCCsContext>(options =>
