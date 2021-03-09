@@ -109,6 +109,7 @@ namespace SistemaDeControleDeTCCs
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                popularBanco.PopularProducao();
                 //app.UseExceptionHandler("/Logger/Index");
                 app.UseHsts();
             }
